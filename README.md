@@ -4,7 +4,7 @@
 
 In this repo you find the bare minimum to create an csv -> parquet ETL using metaflow.
 
-The data was taken from: https://www.kaggle.com/datasets/m000sey/save-the-honey-bees/
+The data was taken from: https://data.gov.lv/dati/dataset/76c7e3fe-2a07-4164-a391-9bca8e039992/resource/7af98218-6266-4459-a79d-a7dfe29277e0/download/t.csv
 
 ## Setup (linux / macOS)
 
