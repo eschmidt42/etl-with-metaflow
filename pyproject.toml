@@ -33,10 +33,6 @@ classifiers = [
 keywords = ["etl","metaflow"]
 # dependencies = [] - now via requirements/*.in files
 
-# entry point to call etl
-[project.scripts]
-etl = "etl_with_metaflow.cli:main"
-
 [tool.black]
 line-length = 80
 
