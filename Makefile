@@ -60,7 +60,7 @@ install: venv
 # github actions test environment
 .PHONY: install-gh-test
 install-gh-test:
-	pip install -r $(req-core-out) && \
+	pip install -r $(req-core-out) -r $(req-dev-out) && \
 	pip install -e .
 
 
