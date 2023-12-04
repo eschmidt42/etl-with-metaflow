@@ -1,0 +1,61 @@
+[bumpver]
+current_version = "0.1.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+
+[bumpver.file_patterns]
+"src/etl_with_metaflow/__init__.py" = [
+    '__version__ = "{version}"',
+]
+"pyproject.toml" = [
+    'version = "{version}"$',
+]
+
+[build-system]
+requires = ["setuptools>=65.0","wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "etl-with-metaflow"
+version = "0.1.0"
+description = ""
+requires-python = ">=3.10"
+authors = [
+    {name = "eschmidt42", email="11818904+eschmidt42@users.noreply.github.com"}
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11"
+]
+keywords = ["etl","metaflow"]
+# dependencies = [] - now via requirements/*.in files
+
+# entry point to call etl
+[project.scripts]
+etl = "etl_with_metaflow.cli:main"
+
+[tool.black]
+line-length = 80
+
+[tool.isort]
+multi_line_output = 3
+line_length = 80
+include_trailing_comma = true
+profile = "black"
+
+[tool.setuptools.packages.find]
+where = ["src"]  # list of folders that contain the packages (["."] by default)
+include = ["etl_with_metaflow"]  # package names should match these glob patterns (["*"] by default)
+exclude = ["tests"]  # exclude packages matching these glob patterns (empty by default)
+namespaces = false  # to disable scanning PEP 420 namespaces (true by default)
+
+[tool.pytest.ini_options]
+pythonpath = ["src/etl_with_metaflow"]
+testpaths = ["src/tests"]
+python_files = ["test_*.py"]
+markers = [
+    "slow" # mark test as slow
+]
