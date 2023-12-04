@@ -7,3 +7,4 @@ jupyterlab
 jupyter-contrib-nbextensions
 ipywidgets
 bumpver
+pytest
